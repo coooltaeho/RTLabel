@@ -83,6 +83,7 @@ typedef enum
 @property (nonatomic, copy) NSString *text, *plainText, *highlightedText;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) NSDictionary *textAttributes;
 @property (nonatomic, strong) NSDictionary *linkAttributes;
 @property (nonatomic, strong) NSDictionary *selectedLinkAttributes;
 @property (nonatomic, unsafe_unretained) id<RTLabelDelegate> delegate;

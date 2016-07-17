@@ -306,6 +306,10 @@
 		}
 		else if ([component.tagLabel caseInsensitiveCompare:@"p"] == NSOrderedSame)
 		{
+            if (self.textAttributes)
+            {
+                CFAttributedStringSetAttribute(attrString, CFRangeMake(component.position, (int)[component.text length]), kCTKernAttributeName, (__bridge CFTypeRef)([NSNumber numberWithFloat:[[self.textAttributes objectForKey:@"kern"] floatValue]]));
+            }
 			[self applyParagraphStyleToText:attrString attributes:component.attributes atPosition:component.position withLength:[component.text length]];
 		}
 		else if ([component.tagLabel caseInsensitiveCompare:@"center"] == NSOrderedSame)
